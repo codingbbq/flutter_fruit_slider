@@ -8,10 +8,9 @@ class AppleCard extends StatelessWidget {
       children: <Widget>[
         Center(
           child: Container(
-            width: 250,
-            height: 250,
-            color: Colors.red[600],
-          ),
+              width: 250,
+              height: 250,
+              child: Image.asset("assets/images/apple.png", fit: BoxFit.fill)),
         ),
         SizedBox(
           height: 30.0,
