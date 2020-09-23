@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'apple_card.dart';
-import 'avocado_card.dart';
+import 'package:flutter_fruit_slider/model/fruits.dart';
+import 'package:flutter_fruit_slider/pages/fruits/fruit_card.dart';
 
 class FruitsPage extends StatelessWidget {
   @override
@@ -47,10 +47,13 @@ class Body extends StatelessWidget {
         height: MediaQuery.of(context).size.height - 140,
         color: Colors.white,
         padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
-        child: PageView(
+        child: PageView.builder(
+          itemBuilder: (context, position) {
+            return FruitCard(fruitItem: fruitList[2]);
+          },
+          itemCount: fruitList.length,
           controller: controller,
           scrollDirection: Axis.horizontal,
-          children: <Widget>[AppleCard(), AvocadoCard()],
         ));
   }
 }

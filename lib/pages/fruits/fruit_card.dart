@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fruit_slider/model/fruits.dart';
 
-class AppleCard extends StatelessWidget {
+class FruitCard extends StatelessWidget {
+  final Fruit fruitItem;
+
+  const FruitCard({Key key, this.fruitItem}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -10,13 +15,13 @@ class AppleCard extends StatelessWidget {
           child: Container(
               width: 250,
               height: 250,
-              child: Image.asset("assets/images/apple.png", fit: BoxFit.fill)),
+              child: Image.asset(fruitItem.img, fit: BoxFit.fill)),
         ),
         SizedBox(
           height: 30.0,
         ),
         Text(
-          "Apple",
+          fruitItem.fruitName,
           style: TextStyle(fontSize: 30.0),
         ),
         SizedBox(
