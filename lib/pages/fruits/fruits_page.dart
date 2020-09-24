@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
         child: PageView.builder(
           itemBuilder: (context, position) {
-            return FruitCard(fruitItem: fruitList[2]);
+            return FruitCard(fruitItem: fruitList[position]);
           },
           itemCount: fruitList.length,
           controller: controller,
@@ -62,37 +62,32 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      width: 100,
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.brightness_1),
-            onPressed: () {
-              controller.nextPage(
-                duration: const Duration(milliseconds: 600),
-                curve: Curves.easeInOut,
-              );
-            },
-            iconSize: 15,
-            color: Colors.grey,
-          ),
-          IconButton(
-            icon: Icon(Icons.brightness_1),
-            onPressed: () {
-              print(controller.page);
-              controller.previousPage(
-                duration: const Duration(milliseconds: 400),
-                curve: Curves.easeInOut,
-              );
-            },
-            iconSize: 15,
-            color: Colors.grey,
-          )
-        ],
-      ),
-    );
+        alignment: Alignment.center,
+        height: 60,
+        color: Colors.white,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: fruitList.length,
+                itemBuilder: (BuildContext context, int position) {
+                  return IconButton(
+                    icon: Icon(Icons.brightness_1),
+                    onPressed: () {
+                      controller.nextPage(
+                        duration: const Duration(milliseconds: 600),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    iconSize: 15,
+                    color: Colors.grey,
+                  );
+                },
+              ),
+            )
+          ],
+        ));
   }
 }
