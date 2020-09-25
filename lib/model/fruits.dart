@@ -25,14 +25,14 @@ final Fruit strawberry = Fruit(
     id: 3,
     fruitName: "Strawberry",
     fruitDescription:
-        "The avocado, a tree likely originating from south-central Mexico, is classified as a member of the flowering plant family Lauraceae. The fruit of the plant, also called an avocado, is botanically a large berry containing a single large seed.",
+        "The garden strawberry is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries, which are cultivated worldwide for their fruit. The fruit is widely appreciated for its characteristic aroma, bright red color, juicy texture, and sweetness.",
     img: "assets/images/strawberry.png");
 
 final Fruit watermelon = Fruit(
     id: 3,
     fruitName: "Watermelon",
     fruitDescription:
-        "The avocado, a tree likely originating from south-central Mexico, is classified as a member of the flowering plant family Lauraceae. The fruit of the plant, also called an avocado, is botanically a large berry containing a single large seed.",
+        "Watermelon is a scrambling and trailing vine in the flowering plant family Cucurbitaceae. Watermelon is grown in favorable climates from tropical to temperate regions worldwide for its large edible fruit, which is a berry with a hard rind and no internal divisions, and is botanically called a pepo.",
     img: "assets/images/watermelon.png");
 
 final List<Fruit> fruitList = [apple, avocado, strawberry, watermelon];

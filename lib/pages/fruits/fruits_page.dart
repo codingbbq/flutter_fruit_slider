@@ -23,15 +23,18 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Row(
-        children: <Widget>[
-          IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back_ios),
-          )
-        ],
+      child: Container(
+        color: Colors.white,
+        child: Row(
+          children: <Widget>[
+            IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.arrow_back_ios),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -62,27 +65,28 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: Alignment.center,
         height: 60,
         color: Colors.white,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Expanded(
+            Container(
+              width: fruitList.length * 50.0,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: fruitList.length,
                 itemBuilder: (BuildContext context, int position) {
                   return IconButton(
                     icon: Icon(Icons.brightness_1),
+                    iconSize: 10,
+                    color: Colors.grey,
                     onPressed: () {
-                      controller.nextPage(
+                      controller.animateToPage(
+                        position,
                         duration: const Duration(milliseconds: 600),
                         curve: Curves.easeInOut,
                       );
                     },
-                    iconSize: 15,
-                    color: Colors.grey,
                   );
                 },
               ),

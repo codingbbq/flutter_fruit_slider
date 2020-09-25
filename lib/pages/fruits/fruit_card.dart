@@ -28,7 +28,7 @@ class FruitCard extends StatelessWidget {
           height: 30.0,
         ),
         Text(
-          "An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia.",
+          fruitItem.fruitDescription,
           style: TextStyle(fontSize: 16.0),
         )
       ],
